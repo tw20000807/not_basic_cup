@@ -1,0 +1,12 @@
+{
+    "name": "sequence",
+    "code": "sequence",
+    "title": "隱藏的序列",
+    "type": "Batch",
+    "has_grader": true,
+    "java_enabled": false,
+    "python_enabled": false,
+    "time_limit": 1.0,
+    "memory_limit": 2048,
+    "description": "find hide sequence"
+}

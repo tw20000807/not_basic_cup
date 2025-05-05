@@ -1,0 +1,15 @@
+@subtask 1
+manual 1.in
+gen1 31 1
+
+@subtask 2
+@include 1
+
+manual 2.in
+gen1 511 2
+
+@subtask 3
+@include 2
+
+manual 3.in
+gen1 1023 3

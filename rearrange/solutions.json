@@ -1,0 +1,4 @@
+{
+    "correct.cpp": { "verdict": "model_solution" },
+    "rearrange.cpp": { "verdict": "correct" }
+}

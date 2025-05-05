@@ -1,0 +1,14 @@
+{
+    "name": "game",
+    "code": "game",
+    "title": "桌遊",
+    "type": "Communication",
+    "has_grader": true,
+    "has_checker":true,
+    "java_enabled": false,
+    "python_enabled": false,
+    "grader_name": "stub",
+    "time_limit": 2.0,
+    "memory_limit": 256,
+    "description": "play game with tw87"
+}

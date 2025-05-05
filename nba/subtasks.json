@@ -1,0 +1,28 @@
+{
+    "subtasks": {
+        "6": {
+            "index": 1,
+            "score": 10
+        },
+        "8": {
+            "index": 2,
+            "score": 10
+        },
+        "32": {
+            "index": 3,
+            "score": 20
+        },
+        "50": {
+            "index": 4,
+            "score": 20
+        },
+        "500": {
+            "index": 5,
+            "score": 20
+        },
+        "512": {
+            "index": 6,
+            "score": 20
+        }
+    }
+}

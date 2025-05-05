@@ -1,0 +1,12 @@
+{
+    "name": "chocolate",
+    "code": "chocolate",
+    "title": "巧克力戰爭",
+    "type": "TwoSteps",
+    "has_grader": true,
+    "java_enabled": false,
+    "python_enabled": false,
+    "time_limit": 2.0,
+    "memory_limit": 256,
+    "description": "count black chocolate number"
+}

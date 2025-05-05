@@ -1,0 +1,26 @@
+@subtask 1
+manual  1.in
+gen1	1 10 1
+gen1	1 10 2
+gen1	1 -10 3
+gen1	1 -10 4
+
+@subtask 2
+manual  2.in
+gen1	2 10 1
+gen1	2 10 2
+gen1	2 -10 3
+gen1	2 -10 4
+
+@subtask 3
+manual  3.in
+gen1	3 10 1
+gen1	3 10 2
+gen1	3 -10 3
+gen1	3 -10 4
+
+@subtask 4
+gen1	4 10 1
+gen1	4 10 2
+gen1	4 -10 3
+gen1	4 -10 4

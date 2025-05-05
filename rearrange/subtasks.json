@@ -1,0 +1,20 @@
+{
+    "global_validators": [],
+    "subtasks": {
+        "samples": {
+            "index": 0,
+            "score": 0,
+            "validators": []
+        },
+        "<=10": {
+            "index": 1,
+            "score": 20,
+            "validators": []
+        },
+        "full": {
+            "index": 2,
+            "score": 80,
+            "validators": []
+        }
+    }
+}

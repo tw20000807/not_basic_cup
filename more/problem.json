@@ -1,0 +1,12 @@
+{
+    "name": "more",
+    "code": "more",
+    "title": "夢中的數字",
+    "type": "TwoSteps",
+    "has_grader": true,
+    "java_enabled": false,
+    "python_enabled": false,
+    "time_limit": 1.0,
+    "memory_limit": 2048,
+    "description": "Find more number"
+}

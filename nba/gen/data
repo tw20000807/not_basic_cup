@@ -1,0 +1,17 @@
+@subtask 6
+manual 6.in
+
+@subtask 8
+manual 8.in
+
+@subtask 32
+manual 32.in
+
+@subtask 50
+manual 50.in
+
+@subtask 500
+manual 500.in
+
+@subtask 512
+manual 512.in

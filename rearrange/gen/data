@@ -1,0 +1,27 @@
+@subtask samples
+copy ../public/examples/01.in
+
+@subtask <=10
+@include samples
+manual 123.in
+manual 132.in
+manual 213.in
+manual 231.in
+manual 312.in
+manual 321.in
+random	10 1
+random	10 2
+random	10 3
+random	10 4
+random	10 5
+
+@subtask full
+@include samples
+@include <=10
+random 200000 1
+random 200000 2
+random 200000 3
+random 200000 4
+random 200000 5
+order 200000 0
+order 200000 1
