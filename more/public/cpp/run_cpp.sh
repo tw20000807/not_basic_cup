@@ -1,7 +1,7 @@
 #!/bin/bash
 
 problem="disappear"
-memory=2097152  # 2GB
+memory=262144  # 256MB
 stack_size=2097152  # 2GB
 
 ulimit -v "${memory}"

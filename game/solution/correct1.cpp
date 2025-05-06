@@ -12,9 +12,11 @@ int mex(vector< int > v){
 	}
 	return v.size();
 }
-void game(int x, int y, const std::vector<int> S){
+vector< int > sg, s;
+int game_start(int x, int y, const std::vector<int> S){
 	--x, --y;
-	vector< int > sg(max(x, y) + 1);
+	s = S;
+	sg = vector< int > (max(x, y) + 1);
 	for(int i = 0; i <= max(x, y); ++i){
 		vector< int > tmp;
 		for(int t : S){
@@ -24,39 +26,17 @@ void game(int x, int y, const std::vector<int> S){
 		}
 		sg[i] = mex(tmp);
 	}
-	if(sg[x] == sg[y]){
-		int t = play(0);
-		if(t < 0) x -= -t;
-		else if(t > 0) y -= t;
-		else exit(0);
-	}
-	while(true){
-		int ok = 0;
-		int ret = 0;
-		if(sg[x] > sg[y]){
-			for(int t : S){
-				if(x - t >= 0 && sg[x - t] == sg[y]){
-					ret = play(-t);
-					x -= t;
-					ok = 1;
-					break;
-				}
-			}
+	return (sg[x] != sg[y]);
+}
+int play(int x, int y){
+	--x, --y;
+	assert(sg[x] != sg[y]);
+	int neg = 1;
+	if(sg[x] > sg[y]) swap(x, y), neg = -1;
+	for(int i : s){
+		if(y - i >= 0 && sg[y - i] == sg[x]){
+			return neg * i;
 		}
-		else if(sg[y] > sg[x]){
-			for(int t : S){
-				if(y - t >= 0 && sg[y - t] == sg[x]){
-					ret = play(t);
-					y -= t;
-					ok = 1;
-					break;
-				}
-			}
-		}
-		assert(ok);
-		if(ret < 0) x -= -ret;
-		else if(ret > 0) y -= ret;
-		else exit(0);
 	}
-	
+	assert(0);
 }

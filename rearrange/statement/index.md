@@ -1,16 +1,12 @@
-# 錯排 (rearrange)
+# 簡短的問題 (short)
 
 ## 題目敘述
 給你一個 $1$ 到 $n$ 的排列 $V$，你想要找到另一個 $1$ 到 $n$ 的排列 $U$，使得 $V_i \neq U_i$。
 
 ## 實作細節
-你上傳的檔案需在開頭加上
+你必須實作以下函式
 ```cpp
-#include "rearrange.h"
-```
-並實作以下函式
-```cpp
-std::vector<int> construct(const std::vector<int> V)
+std::vector<int> construct(std::vector<int> V)
 ```
 這個函式需回傳一個 $1$ 到 $n$ 的排列 $U$，$V, U$ 定義如題序所述。
 ## 限制
@@ -22,7 +18,7 @@ $V_i \neq V_j (\forall i \neq j)$
 
 ## 子任務
 1. (20 分) $n \le 10$
-2. (80 分ints) 無額外限制
+2. (80 分) 無額外限制
 
 ## 範例 
 

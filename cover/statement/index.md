@@ -23,8 +23,9 @@
 $$
 W =
 \begin{cases}
-0.5 + \frac{1}{2 + 2(T - k)}   &\text{if} & T - k \le 4 \\\\
-\frac{0.6k}{T} &\text{if} &T \le 2k \\\\
+1   &\text{if} & T \le k \\\\
+0.5 + \frac{1}{2 + 2(T - k)}   &\text{if} & k \le T \le k +4 \\\\
+\frac{0.6k}{T} &\text{if} &k + 4 < T \le 2k \\\\
 0 &\text{if} &W = 0
 \end{cases}
 $$

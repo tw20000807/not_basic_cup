@@ -39,69 +39,32 @@ int main(int argc, char *argv[]){
             sg[i] = mex(tmp);
         }
     }
-    auto play = [&]() -> int {
-        if(sg[x] > sg[y]){
-            for(int t : S){
-                if(sg[x - t] == sg[y]){
-                    x -= t;
-                    return -t;
-                }
-            }
-            assert(0);
-        }
-        else if(sg[x] < sg[y]){
-            for(int t : S){
-                if(sg[y - t] == sg[x]){
-                    y -= t;
-                    return t;
-                }
-            }
-            assert(0);
-        }
-        else{
-            if(x > y){
-                x -= 1;
-                return -1;
-            }else{
-                y -= 1;
-                return 1;
-            }
-        }
-    };
-    int fir = 1;
-    while(x != 0 || y != 0){
-        int k;
-        assert(fin >> k);
-        if(k < 0)
-            x -= -k;
-        else if(k > 0){
-            y -= k;
-        }
-        else{
-            if(fir == 0){
-                fout << "0" << endl;
-                cout << "0" << endl;
-                cerr << "k = 0 but is not first turn\n";
-                exit(0);
-            }
-        }
-        if(x == 0 && y == 0){
-            fout << "0" << endl;
-            cout << "1" << endl;
-            cerr << "You Win\n";
+    while(fin >> x >> y){
+        if(x == 1 && y == 1){
+            cout << 1 << endl;
+            cerr << "You Win" << endl;
+            fout << 0 << endl;
             exit(0);
         }
-        int ret = play();
-        if(x == 0 && y == 0){
-            fout << "0" << endl;
-            cout << "0" << endl;
-            cerr << "You Lose\n";
-            exit(0);
+        --x, --y;
+        if(sg[x] == sg[y]){
+            if(x > y) fout << -1 << endl;
+            else fout << 1 << endl;
+            continue;
         }
-        else{
-            fout << ret << endl;
+        int neg = 1;
+        if(sg[x] > sg[y]) swap(x, y), neg = -1;
+        for(int i : S){
+            if(y - i >= 0 && sg[y - i] == sg[x]){
+                if(x == 0 && y - i == 0){
+                    cout << 0 << endl;
+                    cerr << "You Lose\n";
+                    exit(0);
+                }
+                fout << neg * i << endl;
+                break;
+            }
         }
-        fir = 0;
     }
     return -1;
 }

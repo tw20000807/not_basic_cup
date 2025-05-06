@@ -1,8 +1,10 @@
-@subtask samples
-copy ../public/examples/01.in
+@subtask 1
+manual  1.in
+manual  2.in
 
-@subtask full
-@include samples
-manual small-1.in
-gen1	20
-gen1	30
+
+@subtask 2
+@include 1
+gen1	1000 1
+gen1	1000 2
+gen1    1000 3
