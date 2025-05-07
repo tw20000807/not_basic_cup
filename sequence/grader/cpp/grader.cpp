@@ -2,6 +2,7 @@
 #include <cassert>
 #include <vector>
 #include <iostream>
+#include <algorithm>
 using namespace std;
 
 namespace{
@@ -47,10 +48,16 @@ int main() {
 
 	bob_init(n);
 	int ver = 1;
+	int mx = *max_element(v.begin(), v.end());
+	int mn = *min_element(v.begin(), v.end());
 	for(int i = 0; i < q; ++i){
 		int a = ask[i];
 		int pa = query_from_alice(a);
-		if(pa != v[a]) ver = 0;
+		if(v[a] == mx || v[a] == mn) continue;
+		if(pa != v[a]){
+			cerr << "a : " << a << ", p[a] = " << v[a] << " " << "you answer " << pa << "\n";
+			ver = 0;
+		}
 	}
 	cout << output_secret << "\n";
 	if(ver){

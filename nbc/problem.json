@@ -1,7 +1,7 @@
 {
-    "name": "nba",
-    "code": "nba",
-    "title": "NBA",
+    "name": "nbc",
+    "code": "nbc",
+    "title": "NBC",
     "type": "OutputOnly",
     "has_grader": false,
     "java_enabled": false,
