@@ -1,0 +1,1 @@
+{"protocol_version": 1, "code": "sequence", "name": "\u96b1\u85cf\u7684\u5e8f\u5217", "time_limit": 2.0, "memory_limit": 268435456, "score_precision": 2, "task_type": "Batch", "task_type_params": "{\"task_type_parameters_Batch_compilation\": \"grader\"}"}
