@@ -1,0 +1,12 @@
+{
+    "name": "ShortAgain",
+    "code": "ShortAgain",
+    "title": "又一個簡短的問題",
+    "type": "Batch",
+    "has_grader": true,
+    "java_enabled": false,
+    "python_enabled": false,
+    "time_limit": 2.0,
+    "memory_limit": 256,
+    "description": "inverse"
+}

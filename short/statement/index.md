@@ -2,13 +2,13 @@
 
 ## 題目敘述
 ----
-給你一個 $1$ 到 $n$ 的排列 $V$，你想要找到另一個 $1$ 到 $n$ 的排列 $U$，使得 $V_i \neq U_i$。
+給你一個 $1$ 到 $n$ 的排列 $V$，你想要找到另一個 $1$ 到 $n$ 的排列 $U$，使得 $V_i \neq U_i$ ($0 \le i \le n - 1$)。
 
 ## 實作細節
 ----
 你必須實作以下函式
 ```cpp
-std::vector<int> construct(std::vector<int> V)
+std::vector<int> construct(std::vector<int> V);
 ```
 這個函式需回傳一個 $1$ 到 $n$ 的排列 $U$，$V, U$ 定義如題序所述。
 ## 限制
@@ -23,6 +23,16 @@ $V_i \neq V_j (\forall i \neq j)$
 ----
 1. (20 分) $n \le 10$
 2. (80 分) 無額外限制
+
+<div style="page-break-after: always"></div>
+
+## 範例評分程式
+----
+範例評分程式採用以下格式輸入：
+
+>$n$  
+>$V_1$  $V_2$ ... $V_n$
+
 
 ## 範例 
 ----

@@ -1,10 +1,6 @@
 @subtask <=10
-manual 123.in
-manual 132.in
-manual 213.in
-manual 231.in
-manual 312.in
-manual 321.in
+manual 10_0
+manual 10_10
 random	10 1
 random	10 2
 random	10 3
@@ -18,5 +14,3 @@ random 200000 2
 random 200000 3
 random 200000 4
 random 200000 5
-order 200000 0
-order 200000 1
