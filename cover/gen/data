@@ -1,29 +1,29 @@
 @subtask 1
-manual 10stair.in
-
-@subtask 2
-gen1 10 10 0
-
-@subtask 3
-gen1 10 10 -2
-
-@subtask 4
 gen1 10 10 2
 
+@subtask 2
+manual 10stair.in
+
+@subtask 3
+empty 100 100 0
+
+@subtask 4
+increase 100 100 5
+
 @subtask 5
-gen1 2 1000 5
+zero 100 100 0
 
 @subtask 6
-gen1 3 1000 4
+gen1 1 10000 3
 
 @subtask 7
-gen1 100 100 0
+gen1 2 5000 3
 
 @subtask 8
-gen1 100 100 -5
+gen1 4 2500 3
 
 @subtask 9
 gen1 100 100 3
 
 @subtask 10
-gen1 99 99 20
+gen1 100 100 0

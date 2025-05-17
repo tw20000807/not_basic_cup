@@ -1,4 +1,4 @@
-#include "rearrange.h"
+#include "short.h"
 #include <vector>
 #include <algorithm>
 int n;

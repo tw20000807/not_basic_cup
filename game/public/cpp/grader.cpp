@@ -1,73 +1,52 @@
 #include "game.h"
-#include <iostream>
+#include <cassert>
 #include <vector>
+#include <fstream>
+#include <iostream>
 #include <algorithm>
 using namespace std;
 
-int n, x, y;
-int finish = 0;
-int fir = 1;
-vector< int > S
-
-int play(int i){
-	if(finish){
-		cout << "Wrong Answer" << endl;
-		cout << "You do not end the game after play() return 0" << endl;
-		finish = 1;
-		return 0;
+namespace{
+	int judge_play(int x, int y){
+		if(x == 1 && y == 1){
+			cout << "OK, your program win!" << endl;
+			exit(0);
+		}
+		cout << "(" << x << " " << y << ")" << endl;
+		int k;
+		assert(cin >> k);
+		return k;
+	}
+	void move(int &x, int &y, int k){
+		if(k < 0) x -= -k;
+		else y -= k;
+		assert(x > 0 && y > 0);
 	}
 
-	cout << "play(" << i << ")" << endl;
-	if(!fir && i == 0){
-		cout << "Wrong Answer" << endl;
-		cout << "You use play(0) in not first turn" << endl;
-		finish = 1;
-		return 0;
-	}
-	if(!count(S.begin(), S.end(), abs(i))){
-		cout << "Wrong Answer" << endl;
-		cout << abs(i) << " not found in S" << endl;
-		finish = 1;
-		return 0;
-	}
-	if(i < 0) x -= -i;
-	else y -= i;
-	cout << "king at (" << x << "," << y << ")" << endl;
-	if(x < 1 || y < 1){
-		cout << "Wrong Answer" << endl;
-		cout << "Invalid operator" << endl;
-		finish = 1;
-		return 0;
-	}
-	if(x == 1 && y == 1){
-		cout << "OK" << endl;
-		cout << "Your program Win" << endl;
-		finish = 1;
-		return 0;
-	}
-
-	int ret;
-	assert(cin >> ret);
-	assert(count(S.begin(), S.end(), abs(ret)));
-	if(ret < 0) x -= -ret;
-	if(ret > 0) y -= ret;
-	assert(x > 0 && y > 0);
-	if(x == 1 && y == 1){
-		cout << "Wrong Answer" << endl;
-		cout << "Your program Lose" << endl;
-		finish = 1;
-		return 0;
-	}
-	fir = 0;
-	return ret;
 }
+
 int main() {
+	int n, x, y;
 	assert(cin >> n >> x >> y);
-	S = vector< int >(n);
-	for(int i = 0; i < n; ++i) assert(cin >> S[i]);
-	game(x, y, S);
-	if(!finish){
-		cout << "Wrong Answer" << endl;
-		cout << "You end the game before play() return 0";
+	vector< int > S(n);
+	for(int i = 0; i < n; ++i){
+		assert(cin >> S[i]);
+	}
+	int f = game_start(x, y, S);
+	if(!f){
+		int k = judge_play(x, y);
+		move(x, y, k);
+	}
+	while(x != 1 || y != 1){
+		int k = play(x, y);
+		assert(count(S.begin(), S.end(), abs(k)));
+		move(x, y, k);
+		k = judge_play(x, y);
+		assert(count(S.begin(), S.end(), abs(k)));
+		move(x, y, k);
+		if(x == 1 && y == 1){
+			cout << "Wrong, your program lose!" << endl;
+			exit(0);
+		}
 	}
 }

@@ -1,8 +1,8 @@
 #!/bin/bash
 
 problem="short"
-memory=2097152  # 2GB
-stack_size=2097152  # 2GB
+memory=524288  # 256MB
+stack_size=262144  # 2GB
 
 ulimit -v "${memory}"
 ulimit -s "${stack_size}"

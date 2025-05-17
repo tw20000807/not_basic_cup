@@ -1,12 +1,20 @@
 #include "game.h"
-
-void game(int x, int y, const std::vector<int> S){
-	int n = S.size();
-	
-	while(x != 1 && y != 1){
-		int ret = play(x > y ? -1 : 1);
-		if(ret < 0) x -= -ret;
-		else if(ret > 0) y -= ret;
-		else return;
-	}
+#include <algorithm>
+#include <vector>
+#include <cassert>
+using namespace std;
+namespace{
+	int n;
+	vector< int > move;
+}
+int game_start(int x, int y, std::vector<int> S){
+	n = S.size();
+	move = S;
+	assert(count(S.begin(), S.end(), 1) == 1);
+	if(x == y) return 1;
+	return 0;
+}
+int play(int x, int y){
+	if(x > y) return -1;
+	return 1;
 }
