@@ -1,6 +1,6 @@
 @subtask 1
 manual 1.in
-gen1 31 1
+hack 32 1
 
 @subtask 2
 @include 1

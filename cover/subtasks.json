@@ -1,40 +1,36 @@
 {
     "subtasks": {
-        "samples": {
-            "index": 0,
-            "score": 0
-        },
         "1": {
             "index": 1,
-            "score": 4
+            "score": 5
         },
         "2": {
             "index": 1,
-            "score": 4
+            "score": 5
         },
         "3": {
             "index": 1,
-            "score": 6
+            "score": 3
         },
         "4": {
             "index": 1,
-            "score": 8
+            "score": 10
         },
         "5": {
             "index": 1,
-            "score": 10
+            "score": 2
         },
         "6": {
             "index": 1,
-            "score": 12
+            "score": 5
         },
         "7": {
             "index": 1,
-            "score": 8
+            "score": 10
         },
         "8": {
             "index": 1,
-            "score": 20
+            "score": 15
         },
         "9": {
             "index": 1,
@@ -42,7 +38,7 @@
         },
         "10": {
             "index": 1,
-            "score": 8
+            "score": 25
         }
     }
 }

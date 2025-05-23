@@ -13,6 +13,7 @@ int main() {
 		for(int i = 0; i < n + k; ++i) cin >> U[i];
 		int rem = remember(V);
 		vector< int > W = find(k, rem, U);
+		assert((int)W.size() == k);
 		copy(W.begin(), W.end(), back_inserter(V));
 		sort(V.begin(), V.end());
 		sort(U.begin(), U.end());

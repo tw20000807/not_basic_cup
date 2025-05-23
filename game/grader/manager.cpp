@@ -12,22 +12,66 @@ int mex(vector< int > &v){
     }
     return v.size();
 }
+int die(string res){
+    cout << 0 << endl;
+    cerr << res << endl;
+    exit(0);
+}
+vector< int > S, sg;
+int judge_play(int x, int y){
+    if(x == 1 && y == 1){
+        cout << 1 << endl;
+        cerr << "You Win" << endl;
+        exit(0);
+    }
+    --x, --y;
+    if(sg[x] == sg[y]){
+        if(x > y) return -1;
+        else return 1;
+    }
+    int neg = 1;
+    if(sg[x] > sg[y]) swap(x, y), neg = -1;
+    for(int i : S){
+        if(y - i >= 0 && sg[y - i] == sg[x]){
+            if(x == 0 && y - i == 0){
+                cout << 0 << endl;
+                cerr << "You Lose\n";
+                exit(0);
+            }
+            return neg * i;
+        }
+    }
+    cout << 0 << endl;
+    cerr << "Unknown error\n";
+    exit(0);
+}
+void Move(int &x, int &y, int k){
+    if(k < 0) x -= -k;
+    else y -= k;
+    if(!(x > 0 && y > 0)){
+        cout << 0 << endl;
+        cerr << "Invalid Move, out of board\n";
+        exit(0);
+    }
+}
 int main(int argc, char *argv[]){
     ifstream fin(argv[1]);
     ofstream fout(argv[2]);
     int n, x, y;
-    assert(cin >> n >> x >> y);
-    vector< int > S(n);
-    for(int i = 0; i < n; ++i){
-        assert(cin >> S[i]);
+    if(!(cin >> n >> x >> y)){
+        die("can not read n, x, y");
     }
-
+    S.resize(n);
+    sg.resize(max(x, y) + 1);
+    for(int i = 0; i < n; ++i){
+        if(!(cin >> S[i])){
+            die("can not read S");
+        }
+    }
     fout << n << " " << x << " " << y << endl;
     for(int i = 0; i < n; ++i){
         fout << S[i] << endl;
     }
-    --x, --y;
-    vector< int > sg(max(x, y) + 1);
     {
         vector< int > tmp;
         for(int i = 0; i <= max(x, y); ++i){
@@ -39,32 +83,25 @@ int main(int argc, char *argv[]){
             sg[i] = mex(tmp);
         }
     }
-    while(fin >> x >> y){
-        if(x == 1 && y == 1){
-            cout << 1 << endl;
-            cerr << "You Win" << endl;
-            fout << 0 << endl;
-            exit(0);
-        }
-        --x, --y;
-        if(sg[x] == sg[y]){
-            if(x > y) fout << -1 << endl;
-            else fout << 1 << endl;
-            continue;
-        }
-        int neg = 1;
-        if(sg[x] > sg[y]) swap(x, y), neg = -1;
-        for(int i : S){
-            if(y - i >= 0 && sg[y - i] == sg[x]){
-                if(x == 0 && y - i == 0){
-                    cout << 0 << endl;
-                    cerr << "You Lose\n";
-                    exit(0);
-                }
-                fout << neg * i << endl;
-                break;
-            }
-        }
+    int fir;
+    if(!(fin >> fir)){
+        die("can not read fir");
     }
-    return -1;
+    if(fir == 0){
+        int k = judge_play(x, y);
+        Move(x, y, k);
+    }
+    while(true){
+        fout << x << " " << y << endl;
+        int k;
+        if(!(fin >> k)){
+            die("can not read k");
+        }
+        if(!count(S.begin(), S.end(), abs(k))){
+            die("Invalid Move, |k| not in S");
+        }
+        Move(x, y, k);
+        k = judge_play(x, y);
+        Move(x, y, k);
+    }
 }

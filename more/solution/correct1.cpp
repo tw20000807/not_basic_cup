@@ -6,30 +6,30 @@ long long remember(const std::vector<int> v){
 	long long ret = 0;
 	int n = v.size();
 	for(int i = 0; i < n; ++i){
-		mt19937 rng(v[i]);
+		mt19937_64 rng(v[i]);
 		long long tmp = rng();
-		ret ^= tmp;
+		ret -= tmp;
 	}
 	return ret;
 }
 std::vector<int> find(const int k, const long long ret, const std::vector<int> v){
 	int n = v.size();
-	long long x = ret;
+	long long sum = ret;
 	vector< pair<long long, int> > tmp(n);
 	for(int i = 0; i < n; ++i){
-		mt19937 rng(v[i]);
+		mt19937_64 rng(v[i]);
 		tmp[i] = {rng(), v[i]};
-		x ^= tmp[i].first;
+		sum += tmp[i].first;
 	}
 	sort(tmp.begin(), tmp.end());
 	if(k == 1){
-		return {lower_bound(tmp.begin(), tmp.end(), pair<long long,int>{x, 0})->second};
+		return {lower_bound(tmp.begin(), tmp.end(), pair<long long,int>{sum, 0})->second};
 	}
 	if(k == 2){
 		for(int i = 0; i < n; ++i){
 			long long a = tmp[i].first; int b = tmp[i].second;
-			auto it = lower_bound(tmp.begin(), tmp.end(), pair<long long,int>{x^a, 0});
-			if(it->first == (x ^ a)){
+			auto it = lower_bound(tmp.begin(), tmp.end(), pair<long long,int>{sum-a, 0});
+			if(it->first == (sum - a)){
 				return {b, it->second};
 			}
 		}
@@ -37,9 +37,9 @@ std::vector<int> find(const int k, const long long ret, const std::vector<int> v
 	if(k == 3){
 		for(int i = 0; i < n; ++i) for(int j = i + 1; j < n; ++j){
 			long long a = tmp[i].first; int b = tmp[i].second;
-			long long p = tmp[j].first; int q = tmp[i].second;
-			auto it = lower_bound(tmp.begin(), tmp.end(), pair<long long,int>{x^a^p, 0});
-			if(it->first == (x^a^p)){
+			long long p = tmp[j].first; int q = tmp[j].second;
+			auto it = lower_bound(tmp.begin(), tmp.end(), pair<long long,int>{sum-a-p, 0});
+			if(it->first == (sum-a-p)){
 				return {b, q, it->second};
 			}
 		}
