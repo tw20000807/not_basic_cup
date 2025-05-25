@@ -10,12 +10,26 @@ int n, q, query_times = 0;
 vector< int > v;
 int compare_numbers(int i, int j, int k){
 	query_times++;
-	assert(0 <= i && i < n);
-	assert(0 <= j && j < n);
-	assert(0 <= k && k < n);
-	assert(i != j);
-	assert(i != k);
-	assert(j != k);
+	if(!(0 <= i && i < n)){
+        cerr << "i out of range" << endl;
+        cout << 0 << endl;
+        exit(0);
+    }
+    if(!(0 <= j && j < n)){
+        cerr << "j out of range" << endl;
+        cout << 0 << endl;
+        exit(0);
+    }
+    if(!(0 <= k && k < n)){
+        cerr << "k out of range" << endl;
+        cout << 0 << endl;
+        exit(0);
+    }
+    if(i == j || i == k || j == k){
+        cerr << "i, j, k must be different" << endl;
+        cout << 0 << endl;
+        exit(0);
+    }
 	if(v[i] > v[j]) swap(i, j);
 	if(v[i] > v[k]) swap(i, k);
 	if(v[j] > v[k]) swap(j, k);
@@ -40,16 +54,19 @@ int main(int argc, char *argv[]){
         string s;
         if(!(fin >> s)){
             cerr << "can not read s" << endl;
+            cout << 0 << endl;
             exit(0);
         }
         if(s == "start_query") break;
         if(s != "q"){
             cerr << "unknow query" << endl;
+            cout << 0 << endl;
             exit(0);
         }
         int i, j, k;
         if(!(fin >> i >> j >> k)){
             cerr << "can not read i, j, k" << endl;
+            cout << 0 << endl;
             exit(0);
         }
         int ret = compare_numbers(i, j, k);
@@ -69,6 +86,7 @@ int main(int argc, char *argv[]){
         int ret; 
         if(!(fin >> ret)){
             cerr << "can not read ret" << endl;
+            cout << 0 << endl;
             exit(0);
         }
 		if(v[a] == mx || v[a] == mn) continue;

@@ -11,12 +11,22 @@ namespace{
 }
 int compare_numbers(int i, int j, int k){
 	query_times++;
-	assert(0 <= i && i < n);
-	assert(0 <= j && j < n);
-	assert(0 <= k && k < n);
-	assert(i != j);
-	assert(i != k);
-	assert(j != k);
+	if(!(0 <= i && i < n)){
+        cerr << "i out of range" << endl;
+        exit(0);
+    }
+    if(!(0 <= j && j < n)){
+        cerr << "j out of range" << endl;
+        exit(0);
+    }
+    if(!(0 <= k && k < n)){
+        cerr << "k out of range" << endl;
+        exit(0);
+    }
+    if(i == j || i == k || j == k){
+        cerr << "i, j, k must be different" << endl;
+        exit(0);
+    }
 	if(v[i] > v[j]) swap(i, j);
 	if(v[i] > v[k]) swap(i, k);
 	if(v[j] > v[k]) swap(j, k);
