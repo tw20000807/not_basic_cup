@@ -16,8 +16,18 @@ Alice 和 Bob 正在遊玩猜謎遊戲，由 Alice 負責出題目、Bob 負責�
 這個遊戲的目的就是要讓 Bob 詢問的問題數量 $t$ 儘量小來使得 Bob 能正確回答出 Alice 的所有詢問。請協助 Bob，在 $t$ 儘量小的情況下，正確回答所有 Alice 的 $q$ 個問題。
 
 
+<div style="page-break-after: always"></div>
+
 ## 實作細節
 ----
+
+你必須上傳一個檔案 sequence.cpp。
+這個檔案必須在開頭加上 
+
+```cpp
+#include "sequence.h"
+```
+
 你需要實作兩個函式 bob_init() 與 query_from_alice()：
 
 ```cpp
@@ -36,7 +46,6 @@ int query_from_alice(int a);
 * 因為你不可能知道最小值及最大值是多少，所以**若$p_a$為序列中的最大或最小值不管你回答什麼 Alice 都會算你答對**。
 
 
-<div style="page-break-after: always"></div>
 
 此外，在實作 bob_init 時可以呼叫 compare_numbers() 這個函式。
 ```cpp
@@ -46,6 +55,7 @@ int compare_numbers(int i, int j, int k);
 * 此函式會回傳 $p_i, p_j, p_k$ 三數的中位數，也就是這三個數中第二大的數。
 * 範例評分程式內的 compare_numbers() 實作與實際評分程式內的實作完全相同。
 
+<div style="page-break-after: always"></div>
 
 ## 測資限制
 ----

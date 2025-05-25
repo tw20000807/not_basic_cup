@@ -26,12 +26,12 @@ long long remember(std::vector<int> V);
 ```cpp
 std::vector<int> find(int k, long long r, std::vector<int> U);
 ```
-* 其中 $U$ 代表你今天看到的頭獎號碼
+* 其中 $U$ 代表你在馬路上看到的數字集
 * $U$ 比第一個檔案中的 $V$ 多了恰 $k$ 個數字
 * $r$ 代表你第一個檔案中記下來的那個數字。
 * 你必須回傳一個大小為 $k$ 的 vector ，代表你覺得是多了這 $k$ 個數字。
 
-請注意，同一筆測資中可能會呼叫函式多次，但 $|V|$ 的總和不會超過 3000。
+請注意，同一筆測資中可能會呼叫函式多次，但 $|V|$ 的總和不會超過 $2500$
 
 
 <div style="page-break-after: always"></div>
@@ -44,7 +44,7 @@ std::vector<int> find(int k, long long r, std::vector<int> U);
 * $k \in \\{1, 2, 3\\}$
 * $|U| = |V| + k$
 * $V$ 為 $U$ 中拿掉恰 $k$ 個數字
-* |V| 的總和不超過 $2500$
+* $|V|$ 的總和不超過 $2500$
 
 
 ## 子任務

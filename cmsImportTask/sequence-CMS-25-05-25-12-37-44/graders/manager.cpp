@@ -35,7 +35,7 @@ int main(int argc, char *argv[]){
 		assert(cin >> ask[i]);
 	}
     fout << n << " " << q << endl;
-
+    
     while(true){
         string s;
         if(!(fin >> s)){
@@ -79,7 +79,6 @@ int main(int argc, char *argv[]){
 		}
 	}
     int Q = (query_times + n - 1) / n;
-    cerr << "query times : " << query_times << endl;
     if(Q > 500){
         cerr << "query times exceed" << endl;
         cout << 0 << endl;

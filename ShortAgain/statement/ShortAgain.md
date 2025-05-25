@@ -18,7 +18,7 @@ std::vector<int> construct(int n, int k);
 ----
 $1 \le n \le 2 \times 10^5$
 
-$0 \le k \le \frac{n \times (n - 1)}{2}$
+$0 \le k \le \min(10^9, \frac{n \times (n - 1)}{2})$
 
 ## 子任務
 ----
