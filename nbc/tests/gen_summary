@@ -1,0 +1,7 @@
+# test_name gen_line_number gen_line_content
+01	  2	manual 6.in
+02	  5	manual 8.in
+03	  8	manual 32.in
+04	 11	manual 50.in
+05	 14	manual 500.in
+06	 17	manual 512.in

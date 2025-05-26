@@ -1,0 +1,7 @@
+# test_name gen_line_number gen_line_content
+0-01	  2	manual 1.in
+0-02	  3	hack 32 1
+1-01	  8	manual 2.in
+1-02	  9	gen1 511 2
+2-01	 14	manual 3.in
+2-02	 15	gen1 1023 3

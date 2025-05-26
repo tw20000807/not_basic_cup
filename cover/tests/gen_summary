@@ -1,0 +1,11 @@
+# test_name gen_line_number gen_line_content
+01	  2	gen1 10 10 2
+02	  5	manual greedy_wa.in
+03	  8	empty 100 100 0
+04	 11	increase 100 100 5
+05	 14	zero 100 100 0
+06	 17	gen1 1 10000 3
+07	 20	gen1 2 5000 3
+08	 23	gen1 4 2500 3
+09	 26	gen1 10 1000 1
+10	 29	gen1 100 100 0
