@@ -71,7 +71,6 @@ int main(int argc, char *argv[]){
         }
         int ret = compare_numbers(i, j, k);
         fout << ret << endl;
-        query_times++;
         if(query_times > 500 * n){
             cout << 0 << endl;
             cerr << "query times exceed" << endl;

@@ -6,7 +6,7 @@
 #include <fstream>
 using namespace std;
 
-int n, q;
+
 ofstream fout;
 ifstream fin;
 int compare_numbers(int i, int j, int k){
@@ -21,6 +21,7 @@ int compare_numbers(int i, int j, int k){
 int main(int argc, char *argv[]) {
 	fout.open(argv[2]);
 	fin.open(argv[1]);
+	int n, q;
 	if(!(fin >> n >> q)){
 		cerr << "can not read n, q" << endl;
 		exit(0);
